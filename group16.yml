@@ -1,0 +1,13 @@
+name: 'group16'
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ipykernel
+  - ipython>=7.15
+  - vega_datasets
+  - altair_saver
+  - pip
+  - pip:
+    - canvasutils
+    - rpy2

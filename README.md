@@ -11,15 +11,35 @@ A data analysis project for DSCI 522; a course in the Master of Data Science pro
 
 
 
+The report of the exploratory data analysis performed thus far can be found [here](src/EDA0.md)
+
+
 # Usage
+To replicate the analysis, clone this GitHub repository, install the [dependencies](#dependencies) listed below, and run the following commands at the command line/terminal from the root directory of this project:
+
+1. Create a conda envrioment using the `group16.yml`
+
+```bash
+conda env create -f group16.yml
+conda activate group16
+```
+
+2. Download population and crop datasets in the data directory
+
+
+
 
 
 # Dependencies
 
+To run this project, please install the required dependencies [here](https://github.com/UBC-MDS/dsci522-group16/blob/main/group16.yml)
+
+
 
 # License 
 
-The world bank group makes this data publicly available according to the open data standards and licenses datasets under the Creative Commons Attribution 4.0 International license (CC-BY 4.0). If re-using/re-mixing please provide attribution and link to this webpage.
+The Crop growth and Population growth material are licensed under the Creative Commons Attribution 2.5 Canada License (CC BY 2.5 CA). If re-using/re-mixing please provide attribution and link to this webpage.
+
 
 
 # References 
