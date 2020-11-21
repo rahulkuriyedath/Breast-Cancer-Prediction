@@ -11,6 +11,9 @@ A data analysis project for DSCI 522; a course in the Master of Data Science pro
 
 
 
+The report of the exploratory data analysis performed thus far can be found [here](src/EDA0.md)
+
+
 # Usage
 To replicate the analysis, clone this GitHub repository, install the [dependencies](#dependencies) listed below, and run the following commands at the command line/terminal from the root directory of this project:
 
