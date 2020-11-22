@@ -26,11 +26,12 @@ conda env create -f group16.yml
 conda activate group16
 ```
 
-2. Download population and crop datasets in the data directory
+2. Use below code to download population and crop datasets 
 
 ```Python pop_farm_fetch.py --link='http://api.worldbank.org/v2/en/indicator/SP.POP.TOTL?downloadformat=csv' --zip_file_name='tst.zip' --out_file='C:/population.csv' --pop_farm=pop --in_zip_file='API_SP.POP.TOTL_DS2_en_csv_v2_1678576.csv'```
 
 ```Python pop_farm_fetch.py --link='http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_Crops_E_Asia.zip' --zip_file_name='tst2.zip' --out_file='C:/produce.csv' --pop_farm=farm --in_zip_file='Production_Crops_E_Asia.csv'```
+(Modify out file as per your OS folder structure)
 
 # Dependencies
 
