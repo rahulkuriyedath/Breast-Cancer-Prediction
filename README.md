@@ -13,7 +13,7 @@ At the current stage of this project, we are trying to answer the question: Give
 To answer the inferential question proposed above, the current plan is to use a linear regression model to see if the increase in crop production would be able to keep up with the increase in Asian population growth. Before developing this model, we will perform a succinct but relevant exploratory data analysis on the data sets available. Given that this is a time series analysis, a locally estimated scatter plot smoothening (loess) regression model can be explored here to get started. 
 
 
-A markdown report of the exploratory data analysis performed thus far can be found [here](src/EDA0.md), however, if that is not rendering properly on your end, you can also find it [here](src/EDA0.ipynb).
+A report of the exploratory data analysis performed thus far can be found [here](src/EDA0.ipynb)
 
 
 # Usage
