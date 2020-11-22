@@ -8,10 +8,12 @@ This is the repo for the group project for DSCI 522 (group 16)
 A data analysis project for DSCI 522; a course in the Master of Data Science program at the University of British Columbia.
 
 # About 
+At the current stage of this project, we are trying to answer the question: Given the population of people in Asia, and the wheat and paddy production in Asia, How has production in paddy and wheat in Asia varied over time with change in population? Answering this question is important because food insecurity is one of the major causes of high child mortality rates, slow economic development rates and low human development index in the developing world. 
+
+To answer the inferential question proposed above, the current plan is to use a linear regression model to see if the increase in crop production would be able to keep up with the increase in Asian population growth. Before developing this model, we will perform a succinct but relevant exploratory data analysis on the data sets available. Given that this is a time series analysis, a locally estimated scatter plot smoothening (loess) regression model can be explored here to get started. 
 
 
-
-The report of the exploratory data analysis performed thus far can be found [here](src/EDA0.md)
+A markdown report of the exploratory data analysis performed thus far can be found [here](src/EDA0.md), however, if that is not rendering properly on your end, you can also find it [here](src/EDA0.ipynb).
 
 
 # Usage
