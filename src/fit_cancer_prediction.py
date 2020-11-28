@@ -2,6 +2,16 @@
 
 date: 2020-11-28
 
+This scripts takes the training and test data files and returns the test metric results of predictive models
+Usage: fit_cance_prediction.py --in_train_file=<in_file> --in_test_file=<in_test_file>  --out_file=<out_file> 
+ 
+Options:
+<in_train_file>     Path (including filename and extension) from which train file is chosen
+<in_test_file>      Path (including filename and extension) from which test file is chosen
+<out_file>          Path (including filename and extension) of where to locally write the file
+
+Example: Python fit_cancer_prediction.py --in_train_file='../data/raw/train.csv' --in_test_file='../data/raw/test.csv'
+         --out_file='../src/prediction_output.csv'
 """
 from docopt import docopt
 import numpy as np
@@ -26,6 +36,12 @@ from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.svm import SVC
 
+opt = docopt(__doc__)
+in_train_file = opt['--in_train_file']
+in_test_file = opt['--in_test_file']
+out_file = opt['--out_file']
+
+warnings.filterwarnings('ignore')
 
 train_df = pd.read_csv(in_train_file)
 test_df = pd.read_csv(in_test_file)
@@ -53,3 +69,26 @@ preprocessor = make_column_transformer(
 
 preprocessor.fit(X_train);             # Calling fit to examine all the transformers
 preprocessor.named_transformers_
+
+# Using different classifiers
+
+classifiers = {
+    "DummyClassifier": DummyClassifier(strategy="most_frequent"),
+    "Decision tree": DecisionTreeClassifier(),
+    "kNN": KNeighborsClassifier(),
+    "RBF SVM": SVC(),
+    "Logistic Regression": LogisticRegression(),
+    "Random Forest": RandomForestClassifier(),
+}
+
+results_dict = {}
+results = {}
+
+scoring = ['recall', 'accuracy', 'precision', 'f1']
+
+for name, classifier in classifiers.items():
+    pipe_classifier = make_pipeline(preprocessor, classifier)
+    scores = cross_validate(pipe_classifier, X_train, y_train, return_train_score=True, scoring=scoring)
+    results = {name: pd.DataFrame(scores).mean().tolist()}
+    results_dict.update(results)
+pd.DataFrame(results_dict, index = scores.keys()).round(2).to_csv(out_file)
