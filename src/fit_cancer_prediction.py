@@ -39,3 +39,17 @@ X_train, y_train = train_df.drop(columns=["Classification"]), train_df["Classifi
 X_test, y_test = test_df.drop(columns=["Classification"]), test_df["Classification"]
 
 # Identifying different feature types
+
+numeric_features = X_train.select_dtypes(include=np.number).columns.tolist()
+numeric_features
+
+# Defining preprocessor
+
+numeric_transformer = make_pipeline(StandardScaler())   # Since there is no missing values we do not need impute the data
+
+preprocessor = make_column_transformer(
+    (numeric_transformer, numeric_features)
+)
+
+preprocessor.fit(X_train);             # Calling fit to examine all the transformers
+preprocessor.named_transformers_
