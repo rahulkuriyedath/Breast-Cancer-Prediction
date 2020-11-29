@@ -41,15 +41,19 @@ This script takes in the raw data and splits it into train and test data using 8
  ```Python split_train_test.py --in_train_file='C:/dataR2.csv' --train_out='C:/data/raw/train.csv' --test_out='C:/data/raw/test.csv'```
 
 
-
 4. A script that creates exploratory data visualizations. 
 
+This scripts takes in the training data file as a csv and performs an exploratory data analysis and generates two image files.
 
+```Python generate_figs.py  --figure_1='/figures/class_imbalance_check.png'  --figure_2='./figures/pairplot.png'```
 
 
 5. A script that performs machine learning analysis and summarizes the results as a table.
 
+This scripts takes the training and test data files and returns the test metric results of the predictive models
 
+```Python fit_cancer_prediction.py --in_train_file='../data/raw/train.csv' --in_test_file='../data/raw/test.csv'
+         --out_file='../src/prediction_output.csv'```
 
 
 # Dependencies
