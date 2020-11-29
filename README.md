@@ -45,7 +45,12 @@ This script takes in the raw data and splits it into train and test data using 8
 
 
 
-4. 
+4. A script that creates exploratory data visualizations. 
+
+
+
+
+5. A script that performs machine learning analysis and summarizes the results as a table.
 
 
 
