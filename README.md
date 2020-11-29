@@ -52,8 +52,7 @@ This scripts takes in the training data file as a csv and performs an explorator
 
 This scripts takes the training and test data files and returns the test metric results of the predictive models
 
-```Python fit_cancer_prediction.py --in_train_file='../data/raw/train.csv' --in_test_file='../data/raw/test.csv'
-         --out_file='../src/prediction_output.csv'```
+```Python fit_cancer_prediction.py --in_train_file='../data/raw/train.csv' --in_test_file='../data/raw/test.csv' --out_file='../src/prediction_output.csv'```
 
 
 # Dependencies
