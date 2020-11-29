@@ -32,16 +32,13 @@ conda activate group16
 
 2. Download breast cancer coimbra dataset in the data directory
 
-```Python pop_farm_fetch.py --link='http://api.worldbank.org/v2/en/indicator/SP.POP.TOTL?downloadformat=csv' --zip_file_name='tst.zip' --out_file='C:/population.csv' --pop_farm=pop --in_zip_file='API_SP.POP.TOTL_DS2_en_csv_v2_1678576.csv'```
-
-```Python pop_farm_fetch.py --link='http://fenixservices.fao.org/faostat/static/bulkdownloads/Production_Crops_E_Asia.zip' --zip_file_name='tst2.zip' --out_file='C:/produce.csv' --pop_farm=farm --in_zip_file='Production_Crops_E_Asia.csv'```
-
-
+```Python download_data.py --url='https://archive.ics.uci.edu/ml/machine-learning-databases/00451/dataR2.csv' --out_file='C:/data/raw/data.csv'```
 
 3. Split the data into training and test splits.
 
 This script takes in the raw data and splits it into train and test data using 80/20 split.
 
+ ```Python split_train_test.py --in_train_file='C:/dataR2.csv' --train_out='C:/data/raw/train.csv' --test_out='C:/data/raw/test.csv'```
 
 
 
