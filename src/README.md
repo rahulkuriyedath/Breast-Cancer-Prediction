@@ -7,7 +7,7 @@ This folder consists of code documents required to run this project.
 # HOW TO NAVIGATE THIS FOLDER:
 =============================
 
-* `fetch_file.py`: """This script downloads the data from the internet and saves it locally. 
+* `download_data.py`: """This script downloads the data from the internet and saves it locally. 
 
 Usage: Python generate_data.py --in_raw_data=<in_raw_data>  --train_df=<train_df> --test_df=<test_df>
 Options:
