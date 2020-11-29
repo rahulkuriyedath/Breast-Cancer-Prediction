@@ -3,7 +3,7 @@
 date: 2020-11-28
 
 This scripts takes the training and test data files and returns the test metric results of predictive models
-Usage: fit_cance_prediction.py --in_train_file=<in_file> --in_test_file=<in_test_file>  --out_file=<out_file> 
+Usage: fit_cancer_prediction.py --in_train_file=<in_file> --in_test_file=<in_test_file>  --out_file=<out_file> 
  
 Options:
 <in_train_file>     Path (including filename and extension) from which train file is chosen
