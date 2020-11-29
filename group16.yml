@@ -14,6 +14,11 @@ dependencies:
   - jinja2
   - pip>=20
   - pandas-profiling>=1.4.3
+  - seaborn
+  - numpy>=1.16.5
+  - python>=3
+  - python-dateutil>=2.7.3
+  - pytz
   - pip:
     - psutil>=5.7.2
     - xgboost>=1.*
