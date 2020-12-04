@@ -28,3 +28,16 @@ test_df = pd.read_csv(in_test_file)
 # Separating X and y from test_df
 test_df = test_df.drop(columns=["Unnamed: 0"])
 X_test, y_test = test_df.drop(columns=["Classification"]), test_df["Classification"]
+
+# Predicting on the test dataset
+trained_model = pickle.load(open(model, 'rb'))
+predict_score = trained_model.score(X_test, y_test)
+print("Prediction score on the test dataset: %0.3f" % (predict_score))
+
+# Saving predictions in a table
+predictions = pd.Series(trained_model.predict(X_test))
+predict_table = test_df
+predict_table['Prediction'] = predictions
+predict_table.to_csv(out_file)
+
+print('prediction_table.csv successfully created')
