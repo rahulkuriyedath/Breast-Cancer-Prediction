@@ -1,4 +1,4 @@
-"""authors: Adithya and Saule Atymtayeva
+"""authors: Aditya Bhatraju and Saule Atymtayeva
 
 date: 2020-11-28
 
@@ -30,11 +30,11 @@ from sklearn.dummy import DummyClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
+from sklearn.naive_bayes import BernoulliNB
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.svm import SVC
 
 opt = docopt(__doc__)
 in_train_file = opt['--in_train_file']
@@ -77,6 +77,7 @@ classifiers = {
     "Decision tree": DecisionTreeClassifier(),
     "kNN": KNeighborsClassifier(),
     "RBF SVM": SVC(),
+    "Naive Bayes": BernoulliNB(),
     "Logistic Regression": LogisticRegression(),
     "Random Forest": RandomForestClassifier(),
 }
