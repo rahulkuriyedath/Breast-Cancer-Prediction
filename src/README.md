@@ -7,6 +7,7 @@ This folder consists of code documents required to run this project.
 # HOW TO NAVIGATE THIS FOLDER:
 =============================
 
+
 * `download_data.py`: """This script downloads data csv data from the web to a local filepath as a csv.
 
 `Usage: download_data.py --url=<url> --out_file=<out_file>` 
