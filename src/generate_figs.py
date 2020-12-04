@@ -14,6 +14,7 @@ from docopt import docopt
 import os
 import numpy as np
 import pandas as pd
+import seaborn as sns
 
 
 opt = docopt(__doc__)
