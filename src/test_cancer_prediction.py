@@ -17,3 +17,14 @@ from docopt import docopt
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 import pickle
+
+opt = docopt(__doc__)
+in_test_file = opt['--in_test_file']
+model = opt['--model']
+out_file = opt['--out_file']
+
+test_df = pd.read_csv(in_test_file)
+
+# Separating X and y from test_df
+test_df = test_df.drop(columns=["Unnamed: 0"])
+X_test, y_test = test_df.drop(columns=["Classification"]), test_df["Classification"]
