@@ -38,6 +38,7 @@ from sklearn.linear_model import LogisticRegression
 import pickle
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
+import os
 
 opt = docopt(__doc__)
 in_train_file = opt['--in_train_file']
@@ -87,7 +88,13 @@ for name, classifier in classifiers.items():
     scores = cross_validate(pipe_classifier, X_train, y_train, return_train_score=True, scoring=scoring)
     results = {name: pd.DataFrame(scores).mean().tolist()}
     results_dict.update(results)
-pd.DataFrame(results_dict, index = scores.keys()).round(4).to_csv(out_file)
+
+try:
+    pd.DataFrame(results_dict, index = scores.keys()).round(4).to_csv(out_file)
+
+except:
+    os.makedirs(os.path.dirname(out_file))
+    pd.DataFrame(results_dict, index = scores.keys()).round(4).to_csv(out_file)
 
 # Making pipeline with LogisticRegression and optimizing `C`
 pipe_lr = make_pipeline(LogisticRegression(max_iter=1000))
