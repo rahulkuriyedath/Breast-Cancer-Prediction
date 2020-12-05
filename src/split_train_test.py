@@ -16,13 +16,13 @@ from docopt import docopt
 opt = docopt(__doc__)
 
 in_train_file = opt['--in_train_file']
-train_out= opt['--train_out']
-test_out= opt['--test_out']
+train_out = opt['--train_out']
+test_out = opt['--test_out']
 
   
 
 raw_data = pd.read_csv(in_train_file)
-train_df, test_df = train_test_split(raw_data, train_size=0.8, random_state=123)
+train_df, test_df = train_test_split(raw_data, train_size = 0.8, random_state = 123)
 
 try:
     train_df.to_csv(train_out)

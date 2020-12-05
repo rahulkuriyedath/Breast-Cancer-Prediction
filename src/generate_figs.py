@@ -24,9 +24,9 @@ figure_2 = opt['--figure_2']
 
 
 try:
-    eda1 = train_df["Classification"].value_counts(normalize=True).plot(kind = 'bar').get_figure().savefig(figure_1) # working. relative path
+    eda1 = train_df["Classification"].value_counts(normalize = True).plot(kind = 'bar').get_figure().savefig(figure_1) # working relative path
     plot = sns.pairplot(train_df).savefig(figure_2)
 except:
     os.mkdir("./figures")
-    eda1 = train_df["Classification"].value_counts(normalize=True).plot(kind = 'bar').get_figure().savefig(figure_1) # working. relative path
+    eda1 = train_df["Classification"].value_counts(normalize = True).plot(kind = 'bar').get_figure().savefig(figure_1) # working relative path
     plot = sns.pairplot(train_df).savefig(figure_2)
