@@ -22,11 +22,17 @@ in_train_file = opt['--in_train_file']
 figure_1 = opt['--figure_1']
 figure_2 = opt['--figure_2']
 
+train_df = pd.read_csv(in_train_file)
 
-try:
-    eda1 = train_df["Classification"].value_counts(normalize = True).plot(kind = 'bar').get_figure().savefig(figure_1) # working relative path
-    plot = sns.pairplot(train_df).savefig(figure_2)
-except:
-    os.mkdir("./figures")
-    eda1 = train_df["Classification"].value_counts(normalize = True).plot(kind = 'bar').get_figure().savefig(figure_1) # working relative path
-    plot = sns.pairplot(train_df).savefig(figure_2)
+if not os.path.exists('figures'):
+    os.makedirs('figures')
+
+
+#try:
+eda1 = train_df["Classification"].value_counts(normalize = True).plot(kind = 'bar').get_figure().savefig(figure_1) # working relative path
+plot = sns.pairplot(train_df).savefig(figure_2)
+
+#except:
+#    os.makedirs(os.path.dirname(figure_1))
+#    eda1 = train_df["Classification"].value_counts(normalize = True).plot(kind = 'bar').get_figure().savefig(figure_1) # working relative path
+#    plot = sns.pairplot(train_df).savefig(figure_2)
