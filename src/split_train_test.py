@@ -21,7 +21,7 @@ test_out = opt['--test_out']
 
   
 
-raw_data = pd.read_csv(in_train_file)
+raw_data = pd.read_csv(in_train_file, header=[1])
 train_df, test_df = train_test_split(raw_data, train_size = 0.8, random_state = 123)
 
 try:
