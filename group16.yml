@@ -21,8 +21,10 @@ dependencies:
   - pytz
   - docopt
   - warnings
+  - dataframe_image
   - pip:
     - psutil>=5.7.2
     - xgboost>=1.*
     - lightgbm>=3.*
     - git+git://github.com/mgelbart/plot-classifier.git
+    - lxml
