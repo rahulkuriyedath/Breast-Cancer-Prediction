@@ -20,7 +20,7 @@ To avoid breaking the golden rule, we separated the data set into a train and te
 Furthermore, given that there are only numerical features in this dataset, the features were scaled using the standard scaler function during data preprocessing. Subsequently, multiple machine learning classifiers were explored based on multiple classification evaluation metrics such as recall, f1, precision and accuracy scores. The baseline model was created using sklearn's DummyClassifier. This classifier was included as a sanity check to use in comparison with the other, more complicated classifiers.  Furthermore, these more complicated classifiers were explored, and then a classifier was chosen based on the important classification metrics indicated in the analysis and conclusion section (an example being: because we are interested in identifying patients with breast cancer, therefore that would be our "positive" class, which will make the recall metric vital in selecting a model).
   
 
-A literate code document of the current analysis undertaken can be found [here](src/EDA.ipynb).
+A literate code document of the current analysis undertaken can be found [here](doc/breast_cancer_prediction_report.ipynb).
 
 
 # Usage
@@ -35,7 +35,8 @@ conda activate group16
 
 2. Use makefile to run the analysis by running the below command in terminal:-
 
-```make all
+```
+make all
 ```
 
 
