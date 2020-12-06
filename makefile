@@ -2,7 +2,7 @@
 # author: Rahul Kuriyedath
 # date: 2020-12-04
 
-all: results/prediction_table.csv figures/class_imbalance_check.png figures/pairplot.png src/EDA.html
+all: results/prediction_table.csv figures/class_imbalance_check.png figures/pairplot.png doc/breast_cancer_prediction_report.html
 
 # download data
 data/raw/raw_data.csv: src/download_data.py
@@ -25,8 +25,8 @@ results/prediction_table.csv: src/test_cancer_prediction.py data/raw/test.csv re
 	python src/test_cancer_prediction.py --in_test_file='data/raw/test.csv' --model='results/trained_model.sav' --out_file='results/prediction_table.csv'
 
 # render report
-src/EDA.html: src/EDA.ipynb
-	jupyter nbconvert --to html src/EDA.ipynb
+doc/breast_cancer_prediction_report.html: doc/breast_cancer_prediction_report.ipynb
+	jupyter nbconvert --to html doc/breast_cancer_prediction_report.ipynb
 
 clean: 
 	rm -rf data
