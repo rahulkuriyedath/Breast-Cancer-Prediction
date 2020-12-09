@@ -22,3 +22,4 @@ dependencies:
     - psutil>=5.7.2
     - xgboost>=1.*
     - git+git://github.com/mgelbart/plot-classifier.git
+    - lxml
