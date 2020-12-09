@@ -2,7 +2,7 @@
 # author: Rahul Kuriyedath
 # date: 2020-12-04
 
-all: results/prediction_table.csv figures/class_imbalance_check.png figures/pairplot.png doc/breast_cancer_prediction_report.html
+all: results/prediction_table.png figures/class_imbalance_check.png figures/pairplot.png doc/breast_cancer_prediction_report.html
 
 # download data
 data/raw/raw_data.csv: src/download_data.py
@@ -21,8 +21,8 @@ results/classifiers_cv_scores.csv results/random_search_results.csv results/trai
 	python src/fit_cancer_prediction.py --in_train_file='data/raw/train.csv' --out_file='results/classifiers_cv_scores.csv' --out_file2='results/random_search_results.csv' --model='results/trained_model.sav'
 
 # test model on unseen data
-results/prediction_table.csv: src/test_cancer_prediction.py data/raw/test.csv results/trained_model.sav
-	python src/test_cancer_prediction.py --in_test_file='data/raw/test.csv' --model='results/trained_model.sav' --out_file='results/prediction_table.csv'
+results/confusion_matrix.png results/prediction_table.png: src/test_cancer_prediction.py data/raw/test.csv results/trained_model.sav
+	python src/test_cancer_prediction.py --in_test_file='data/raw/test.csv' --in_model='results/trained_model.sav' --out_matrix='results/confusion_matrix.png' --out_table='results/prediction_table.png'
 
 # render report
 doc/breast_cancer_prediction_report.html: doc/breast_cancer_prediction_report.ipynb
