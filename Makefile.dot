@@ -1,0 +1,36 @@
+digraph G {
+n2[label="all", color="red"];
+n7[label="data/raw/raw_data.csv", color="green"];
+n5[label="data/raw/test.csv", color="green"];
+n11[label="data/raw/train.csv", color="green"];
+n15[label="doc/breast_cancer_prediction_report.html", color="red"];
+n16[label="doc/breast_cancer_prediction_report.ipynb", color="green"];
+n12[label="figures/class_imbalance_check.png", color="green"];
+n14[label="figures/pairplot.png", color="green"];
+n3[label="results/prediction_table.png", color="red"];
+n9[label="results/trained_model.sav", color="green"];
+n8[label="src/download_data.py", color="green"];
+n10[label="src/fit_cancer_prediction.py", color="green"];
+n13[label="src/generate_figs.py", color="green"];
+n6[label="src/split_train_test.py", color="green"];
+n4[label="src/test_cancer_prediction.py", color="green"];
+n15 -> n2 ; 
+n12 -> n2 ; 
+n14 -> n2 ; 
+n3 -> n2 ; 
+n8 -> n7 ; 
+n7 -> n5 ; 
+n6 -> n5 ; 
+n7 -> n11 ; 
+n6 -> n11 ; 
+n16 -> n15 ; 
+n11 -> n12 ; 
+n13 -> n12 ; 
+n11 -> n14 ; 
+n13 -> n14 ; 
+n5 -> n3 ; 
+n9 -> n3 ; 
+n4 -> n3 ; 
+n11 -> n9 ; 
+n10 -> n9 ; 
+}
