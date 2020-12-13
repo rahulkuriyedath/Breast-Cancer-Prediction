@@ -1,5 +1,5 @@
 # Docker file for the breast cancer predictor using clinical and anthropometric data project
-# Aditya Bhatraju, Anene ifeanyi, Rahul Kuriyedath, Saule Atymtayeva, Dec, 2020
+# Aditya Bhatraju, Anene Ifeanyi, Rahul Kuriyedath, Saule Atymtayeva, Dec, 2020
 
 # Use jupyter/scipy-notebook as the base image
 FROM jupyter/scipy-notebook
