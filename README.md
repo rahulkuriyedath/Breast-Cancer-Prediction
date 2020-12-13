@@ -39,6 +39,8 @@ conda activate group16
 make all
 ```
 
+## Makefile Dependency Graph
+![](Makefile.png)
 
 # Dependencies
 
