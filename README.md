@@ -26,14 +26,16 @@ A literate code document of the current analysis undertaken can be found [here](
 # Usage
 To replicate the analysis, clone this GitHub repository, install the [dependencies](#dependencies) listed below, and run the following commands at the command line/terminal from the root directory of this project:
 
-1. Create a conda envrioment using the `group16.yml`
+- Create a conda envrioment using the `group16.yml`
 
 ```bash
 conda env create -f group16.yml
 conda activate group16
 ```
 
-2. To run this analysis using Docker, clone/download this repository, use the command line to navigate to the root of this project on your computer, and then type the following (filling in PATH_ON_YOUR_COMPUTER with the absolute path to the root of this project on your computer).
+## With Docker 
+
+- To run this analysis using Docker, clone/download this repository, use the command line to navigate to the root of this project on your computer, and then type the following (filling in PATH_ON_YOUR_COMPUTER with the absolute path to the root of this project on your computer).
 
 ```
 docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis_eg ifyanene/dsci522-group16:v0.3.0 make -C ‘/home/data_analysis_eg’ all
@@ -45,8 +47,27 @@ To clean up the analysis type:
 docker run --rm -v PATH_ON_YOUR_COMPUTER:/home/data_analysis_eg ifyanene/dsci522-group16:v0.3.0 make -C ‘/home/data_analysis_eg’ clean
 ```
 
+## Without Docker
+
+- To run this analysis without using Docker, install the dependencies [here](https://github.com/UBC-MDS/dsci522-group16/blob/main/group16.yml). 
+
+Once the dependencies are installed 
+
+Use makefile to run the analysis by running the below command in terminal from the root directory of this project:
+
+```
+make all
+```
+
+To reset the repo to it's initial state, run the following command at the command line from the root directory of this project:
+
+```
+make clean
+```
+
 ## Makefile Dependency Graph
 ![](Makefile.png)
+
 
 # Dependencies
 
