@@ -31,5 +31,4 @@ doc/breast_cancer_prediction_report.html: doc/breast_cancer_prediction_report.ip
 clean: 
 	rm -rf data
 	rm -rf results
-	rm -rf doc
 	rm -rf figures
